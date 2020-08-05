@@ -1,7 +1,7 @@
 ﻿# Blinks API Reference
 # Display
 ## **setColor()**
- **Description**\
+ **Description**
   
 Displays a color on the entire Blink.
 
@@ -14,7 +14,7 @@ COLOR: a color, either from [Defined Colors](https://docs.google.com/document/d/
 **Returns**\
 Displays a color on the entire Blink.
 
-**Example Code**\
+**Example Code**
 ```
 void setup() {
 
@@ -43,7 +43,7 @@ Face Number: a pixel on a Blink. Can be from (1-6) faces.
 **Returns**\
 Displays a color on a certain face(s) on the Blink.
 
-**Example Code**\
+**Example Code**
 ```
 void setup() {
 
@@ -533,7 +533,7 @@ True if the value received on face f has changed compared to the last received v
 
 **Example Code**
 ```
-**//**When a Blink sends a new signal to face 0, the Blink will turn red.
+//When a Blink sends a new signal to face 0, the Blink will turn red.
 bool bottomFaceUpdate= didValueOnFaceChange(0);
 if(bottomFaceUpdate)
 {
@@ -734,7 +734,7 @@ F: the variable name for the faces, usually kept as f
 **Returns**\
 None
 
-**Example Code**\
+**Example Code**
 ```
 FOREACH_FACE(f){
 	if (getLastValueReceivedOnFace(f) == WINNER){
