@@ -25,7 +25,6 @@ setColor(BLUE);
 }
 ```
 **Notes & Warnings**\
-
 Please note that setColor() commands do not actually update the color on the LEDs until loop() returns.
 
 ## setColorOnFace()
@@ -256,7 +255,7 @@ None
 **Returns**\
 Returns true on the change from button down to button up, and then sets it back to false.
 
-**Example Code**\
+**Example Code**
 ```
 if(buttonReleased())
 {
