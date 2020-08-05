@@ -1,19 +1,20 @@
 ﻿# Blinks API Reference
 # Display
 ## **setColor()**
-**Description**
+ **Description**\
+  
 Displays a color on the entire Blink.
 
-**Syntax**
+**Syntax**\
 setColor(COLOR);
 
-**Parameters**
+**Parameters**\
 COLOR: a color, either from [Defined Colors](https://docs.google.com/document/d/18tZSNT9PbkFpMRHs1ZLBGBZQ7pKVXfYQyx4ZgM8f9O0/edit#heading=h.2kkwxuxsrz85) or one you define with a Color function.
 
-**Returns**
+**Returns**\
 Displays a color on the entire Blink.
 
-**Example Code**
+**Example Code**\
 ```
 void setup() {
 
@@ -23,26 +24,26 @@ setColor(BLUE);
 
 }
 ```
-**Notes & Warnings**
+**Notes & Warnings**\
 
 Please note that setColor() commands do not actually update the color on the LEDs until loop() returns.
 
 ## setColorOnFace()
-**Description**
+**Description**\
 Displays a color on a single face of a Blink.
 
-**Syntax**
+**Syntax**\
 setColorOnFace(COLOR, face number);
 
-**Parameters**
+**Parameters**\
 COLOR: a color, either from [Defined Colors](https://docs.google.com/document/d/18tZSNT9PbkFpMRHs1ZLBGBZQ7pKVXfYQyx4ZgM8f9O0/edit#heading=h.2kkwxuxsrz85) or one you define with a Color function.
 
 Face Number: a pixel on a Blink. Can be from (1-6) faces.
 
-**Returns**
+**Returns**\
 Displays a color on a certain face(s) on the Blink.
 
-**Example Code**
+**Example Code**\
 ```
 void setup() {
 
@@ -52,7 +53,7 @@ setColorOnFace(WHITE, 0);
 
 }
 ```
-**Notes & Warnings**
+**Notes & Warnings**\
 Please note that setColor() commands do not actually update the color on the LEDs until loop() returns.
 
 ----------
@@ -60,21 +61,21 @@ Please note that setColor() commands do not actually update the color on the LED
 # **Colors**
 
 ## **makeColorRGB()**
-**Description**
+**Description**\
 Summon a color using its RGB value to assign to your blink’s face(s) or store for later
 
-**Syntax**
+**Syntax**\
 makeColorRGB(red, green, blue);
 
-**Parameters**
+**Parameters**\
 Red: amount of red, 0-255
 Green: amount of green, 0-255
 Blue: amount of blue, 0-255
 
-**Returns**
+**Returns**\
 A color value that can then be used to set the color of the blinks
 
-**Example**
+**Example Code**
 ```
 //if you want to name a color to reference at the top of 
 //your code to store for use throughout your code
@@ -101,28 +102,28 @@ Byte flexBlue = 150;
 //and then you could write code that changes the 
 //values of flexRed, flexGreen, and flexBlue to make the RAINBOW color change over time
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 If you’d like to have control over the Hue, Saturation, or Brightness of your blinks, it may better serve you to use the makeColorHSB() function.
 There are 9 preset Blinks colors that you do not need to define.
 There are lots of existing RGB color pickers online to help you find just the right color, for example:
 [rapidtables.com/web/color/RGB_Color.html](http://rapidtables.com/web/color/RGB_Color.html)
 
 ## makeColorHSB()
-**Description**
+**Description**\
 Summon a color using its HSB value to assign to your blink’s face(s) or store for later
 
-**Syntax**
+**Syntax**\
 makeColorHSB(hue, saturation, brightness);
 
-**Parameters**
+**Parameters**\
 Hue: The numerical hue of your color, 0-255 (where 0 is red-adjacent orange and 255 is red-adjacent purple)
 Saturation: How saturated your color will be, 0-255 (where 0 is white and 255 is full color)
 Brightness: How bright your color will be, 0-255 (where 0 is entirely dark and 255 is full power)
 
-**Returns**
+**Returns**\
 A color value that can then be used to set the color of the blinks
 
-**Example**
+**Example Code**
 ```
 //if you want to name a color to reference at the top of your
 // code to store for use throughout your code
@@ -148,25 +149,25 @@ Byte flexBrightness = 150;
 //and then you could write code that changes the values of flexHue, 
 //flexSaturation, and flexBrightness to make the RAINBOW color change over time
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 Most HSB color pickers set the Hue parameter on a scale of 0-360, however blinks read them from 0-255. If you use an online HSB color picker you will likely have to adjust your Hue value.
 There are 9 preset Blinks colors that you do not need to define.
 
 ## **dim()**
-**Description**
+**Description**\
 returns the color passed in a dimmer state
 
-**Syntax**
+**Syntax**\
 dim(color, value);
 
-**Parameters**
+**Parameters**\
 Color: Any defined color name, either one of the predefined color values or one you define yourself
 Value: Brightness (from makeColorHSB) 0-255 bucketed into 32 levels of brightness (0 means light is off, 255 means light is all the way on)
 
-**Returns**
+**Returns**\
 A color shade set to a determined brightness (or dimness)
 
-**Example**
+**Example Code**
 ```
 dim(HAPPY_PURPLE, 150);
 dim(GREEN, 10);
@@ -174,53 +175,45 @@ dim(GREEN, 10);
 ----------
 
 ## **Defined Colors**
-**Description**
+**Description**\
 The blinks have 9 pre-assigned colors that you can call without needing to define them.
 
-**Syntax**
-RED
-ORANGE
-YELLOW
-GREEN
-CYAN
-BLUE
-MAGENTA
-WHITE
+**Syntax**\
+RED\
+ORANGE\
+YELLOW\
+GREEN\
+CYAN\
+BLUE\
+MAGENTA\
+WHITE\
 OFF
 
 (This is how these colors would be defined if written with makeColorRGB or makeColorHSB)
-#define RED makeColorRGB(255, 0, 0)
-#define ORANGE makeColorRGB(255, 127, 0)
-#define YELLOW makeColorRGB(255, 255, 0)
-#define GREEN makeColorRGB( 0, 255, 0)
-#define CYAN makeColorRGB( 0, 255, 255)
-#define BLUE makeColorRGB( 0, , 255)
-#define MAGENTA makeColorRGB(255, 0, 255)
-#define WHITE makeColorRGB(255, 255, 255)
-#define OFF makeColorRGB( 0, 0, 0)
+|RBG|HSB|
+|--|--|
+|#define RED makeColorRGB(255, 0, 0)|#define RED makeColorHSB( 0, 255, 255)|
+|#define ORANGE makeColorRGB(255, 127, 0)|#define ORANGE makeColorHSB( 21, 255, 255)
+|#define YELLOW makeColorRGB(255, 255, 0)|#define YELLOW makeColorHSB( 43, 255, 255)
+|#define GREEN makeColorRGB( 0, 255, 0)|#define GREEN makeColorHSB( 85, 255, 255)
+|#define CYAN makeColorRGB( 0, 255, 255)|#define CYAN makeColorHSB(128, 255, 255)
+|#define BLUE makeColorRGB( 0, 0, 255)|#define BLUE makeColorHSB(170, 255, 255)
+|#define MAGENTA makeColorRGB(255, 0, 255)|#define MAGENTA makeColorHSB(213, 255, 255)
+|#define WHITE makeColorRGB(255, 255, 255)|#define WHITE makeColorHSB( 0, 0, 255)
+|#define OFF makeColorRGB( 0, 0, 0)|#define OFF makeColorHSB( 0, 0, 0)
 
-#define RED makeColorHSB( 0, 255, 255)
-#define ORANGE makeColorHSB( 21, 255, 255)
-#define YELLOW makeColorHSB( 43, 255, 255)
-#define GREEN makeColorHSB( 85, 255, 255)
-#define CYAN makeColorHSB(128, 255, 255)
-#define BLUE makeColorHSB(170, 255, 255)
-#define MAGENTA makeColorHSB(213, 255, 255)
-#define WHITE makeColorHSB( 0, 0, 255)
-#define OFF makeColorHSB( 0, 0, 0)
-
-**Parameters**
+**Parameters**\
 None
 
-**Returns**
+**Returns**\
 The color stated
 
-**Example**
+**Example Code**
 ```
 setColor(BLUE);
 setColorOnFace(MAGENTA, 2);
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 Do not name anything these pre-assigned names! You’ll delete the color RED if you define a new RED!
 
 ----------
@@ -230,19 +223,19 @@ Do not name anything these pre-assigned names! You’ll delete the color RED if 
 All button handling is done with flags, so when you call a function, it returns the value of the flag (i.e. whether or not that action has occurred) and only when you have called the function will it reset the flag to false.
 
 ## **buttonPressed()**
-**Description**
+**Description**\
 Called when a button is pressed. A flag is set to true on the change from button up to button down. buttonPressed() returns that flag, and then sets it back to false.
 
-**Syntax**
+**Syntax**\
 buttonPressed();
 
-**Parameters**
+**Parameters**\
 None
 
-**Returns**
+**Returns**\
 Returns the buttonPressed function flag as true, and then sets it back to false.
 
-**Example**
+**Example Code**
 ```
 if(buttonPressed())
 {
@@ -251,19 +244,19 @@ if(buttonPressed())
 ```
 
 ## **buttonReleased()**
-**Description**
+**Description**\
 Called when a button goes from button down to button up.
 
-**Syntax**
+**Syntax**\
 buttonReleased();
 
-**Parameters**
+**Parameters**\
 None
 
-**Returns**
+**Returns**\
 Returns true on the change from button down to button up, and then sets it back to false.
 
-**Example**
+**Example Code**\
 ```
 if(buttonReleased())
 {
@@ -272,19 +265,19 @@ if(buttonReleased())
 ```
 
 ## **buttonSingleClicked()**
-**Description**
+**Description**\
 Checks if a Blink has been clicked once.
 
-**Syntax**
+**Syntax**\
 buttonSingleClicked();
 
-**Parameters**
+**Parameters**\
 None
 
-**Returns**
+**Returns**\
 Returns true if the Blink has been single clicked since the last time this value was checked.
 
-**Example**
+**Example Code**
 ```
 //This function sets a blink to be red if single clicked.
 if (buttonSingleClicked())
@@ -292,23 +285,23 @@ if (buttonSingleClicked())
 	setColor(RED);
 }
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 This function will remain true until it is called. For example, if a Blink is single clicked, and then, later in the programming, this function is called, it will return true. This can be fixed by calling this function at the bottom of your loop.
 
 ## **buttonDoubleClicked()**
-**Description**
+**Description**\
 Checks if a Blink has been clicked twice in a short amount of time.
 
-**Syntax**
+**Syntax**\
 buttonDoubleClicked();
 
-**Parameters**
+**Parameters**\
 None
 
-**Returns**
+**Returns**\
 Returns true if the Blink has been double clicked since the last time this value was checked.
 
-**Example**
+**Example Code**
 ```
 //This function sets a blink to be red if double clicked.
 if (buttonDoubleClicked())
@@ -316,23 +309,23 @@ if (buttonDoubleClicked())
 	setColor(RED);
 }
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 This function will remain true until it is called. For example, if a Blink is double clicked, and then, later in the programming, this function is called, it will return true. This can be fixed by calling this function at the bottom of your loop.
 
 ## **buttonMultiClicked()**
-**Description**
+**Description**\
 Checks to see if a Blink has been clicked more than once in a short period of time.
 
-**Syntax**
+**Syntax**\
 buttonMultiClicked();
 
-**Parameters**
+**Parameters**\
 None
 
-**Returns**
+**Returns**\
 Returns true if a Blink has been clicked more than once since this value was checked..
 
-**Example**
+**Example Code**
 ```
 //This function sets a blink to be red if multi-clicked.
 if (buttonMultiClicked())
@@ -340,20 +333,20 @@ if (buttonMultiClicked())
 	setColor(RED);
 }
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 This function will remain true until it is called. For example, if a Blink is multi-clicked, and then, later in the programming, this function is called, it will return true. This can be fixed by calling this function at the bottom of your loop.
 
 ## **buttonClickCount()**
-**Description**
+**Description**\
 Returns the number of clicks recorded during button multi clicking.
 
-**Syntax**
+**Syntax**\
 buttonClickCount();
 
-**Parameters**
+**Parameters**\
 None
 
-**Returns**
+**Returns**\
 Returns the number of clicks input as part of a multi-click.
 
 **Example Code**
@@ -364,20 +357,20 @@ if (buttonMultiClicked())
 	clicks = buttonClickCount();
 }
 ```
-**Examples of Usage**
+**Examples of Usage**\
 **[https://forum.move38.com/t/button-inputs-tutorial/288](https://forum.move38.com/t/button-inputs-tutorial/288)**
 
 ## **buttonLongPressed()**
-**Description**
+**Description**\
 When a button is held down continuously for 1.5 seconds.
 
-**Syntax**
+**Syntax**\
 buttonLongPressed();
 
-**Parameters**
+**Parameters**\
 None.
 
-**Returns**
+**Returns**\
 Returns the buttonLongPressed function to be true and an action is then displayed on the Blink.
 
 **Example Code**
@@ -388,23 +381,23 @@ if (buttonLongPressed())
 	longPressing = true;
 }
 ```
-**Notes & Warnings**
+**Notes & Warnings**\
 If you hold the button for too long, the Blink will go into programming mode, or even to sleep.
 
-**Examples of Usage**
+**Examples of Usage**\
 Check out how this method is used in [Astro](https://youtu.be/omJUh8d9GPA)!
 
 ## **buttonDown()**
-**Description**
+**Description**\
 Checks if the button is down.
 
-**Syntax**
+**Syntax**\
 buttonDown();
 
-**Parameters**
+**Parameters**\
 None
 
-**Returns**
+**Returns**\
 Returns true if the button is down, and false if it is not down.
 
 **Example Code**
@@ -420,7 +413,7 @@ void loop() {
 	}
 }
 ```
-**Example of Usage**
+**Example of Usage**\
 [https://forum.move38.com/t/button-inputs-tutorial/288](https://forum.move38.com/t/button-inputs-tutorial/288)
 
 ----------
@@ -428,19 +421,19 @@ void loop() {
 # **Communication**
 
 ## **setValueSentOnAllFaces()**
-**Description**
+**Description**\
 Sets the value sent on all faces to a given value between 0 and 63.
 
-**Syntax**
+**Syntax**\
 setValueSentOnAllFaces(byte value);
 
-**Parameters**
+**Parameters**\
 Value: A value between 0 and 63.
 
-**Returns**
+**Returns**\
 None.
 
-**Example**
+**Example Code**
 ```
 //Sets the value sent on all faces to 10 if isBomb is true.
 if (isBomb == true)
@@ -448,24 +441,24 @@ if (isBomb == true)
 	setValueOnAllFaces(10);
 }
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 This function can be used in conjunction with bitwise operators to send more complex data. See the tutorial on safely sending signals, located [here](https://forum.move38.com/t/safely-sending-signals-part-2/262).
 
 ## **setValueSentOnFace()**
-**Description**
+**Description**\
 Sets the value that should be sent on a specific face on a Blink.
 
-**Syntax**
+**Syntax**\
 setValueOnFace(value, face);
 
-**Parameters**
+**Parameters**\
 Value: A value between 0 and 63 that will be sent.
 Face: One of the six faces on the Blink, 0-5.
 
-**Returns**
+**Returns**\
 None.
 
-**Example**
+**Example Code**
 ```
 //Sets the value sent on face 0 to 10 if isBomb is true.
 if (isBomb == true)
@@ -473,23 +466,23 @@ if (isBomb == true)
 	setValueSentOnFace(10, 0);
 }
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 This function can be used in conjunction with bitwise operators to send more complex data. See the tutorial on safely sending signals, located [here](https://forum.move38.com/t/safely-sending-signals-part-2/262).
 
 ## **getLastValueReceivedOnFace()**
-**Description**
+**Description**\
 Gets the last value received on a specific face.
 
-**Syntax**
+**Syntax**\
 getLastValueReceivedOnFace(face);
 
-**Parameters**
+**Parameters**\
 Face: One of the faces on the Blinks 0-5.
 
-**Returns**
+**Returns**\
 A byte between 0 and 63 that was received from the face.
 
-**Example**
+**Example Code**
 ```
 //Gets the value on face 0 and checks if it is 
 //greater than or equal to 5. Sets to red if true.
@@ -498,23 +491,23 @@ if (getLastValueReceivedOnFace(0) >= 5)
 	setColor(RED);
 }
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 This function does not check if the signal has expired.
 
 ## **isValueReceivedOnFaceExpired()**
-**Description**
+**Description**\
 isValueReceivedOnFaceExpired is a function that checks if a given face has failed to receive a new signal from a neighbor.
 
-**Syntax**
+**Syntax**\
 isValueReceivedOnFaceExpired(byte faceIndex);
 
-**Parameters**
+**Parameters**\
 faceIndex: Index of the face to check [0-5]
 
-**Returns**
+**Returns**\
 True if the value received on face f has not changed or refreshed in the last 200 ms.
 
-**Example**
+**Example Code**
 ```
 //If the value received from face 5 is expired, set its color to red.
 if (isValueReceivedOnFaceExpired(5)
@@ -522,23 +515,23 @@ if (isValueReceivedOnFaceExpired(5)
 	setColorOnFace(RED, 5);
 }
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 isValueReceivedOnFaceExpired() will return false for the first frame a Blink is turned on before setting to false.
 
 ## **didValueOnFaceChange()**
-**Description**
+**Description**\
 didValueOnFaceChange() is a function that allows a Blink to determine if a value that it is receiving is different than the last value that was received on that same face.
 
-**Syntax**
+**Syntax**\
 didValueOnFaceChange(byte faceIndex);
 
-**Parameters**
+**Parameters**\
 faceIndex: Index of the face to check [0-5]
 
-**Returns**
+**Returns**\
 True if the value received on face f has changed compared to the last received value stored on the face.
 
-**Example**
+**Example Code**
 ```
 **//**When a Blink sends a new signal to face 0, the Blink will turn red.
 bool bottomFaceUpdate= didValueOnFaceChange(0);
@@ -547,23 +540,23 @@ if(bottomFaceUpdate)
 	setColor(RED);
 }
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 didValueOnFaceChange() will check against the last value received on the face, meaning even if a Blink is disconnected after sending a signal, that value will remain.
 
 ## **isAlone()**
-**Description**
+**Description**\
 isAlone() is a function that checks if all the faces on a Blink have expired values.
 
-**Syntax**
+**Syntax**\
 bool isAlone();
 
-**Parameters**
+**Parameters**\
 None
 
-**Returns**
+**Returns**\
 True if all faces on the Blink have not received a valid signal within the last 200 ms. 
 
-**Example**
+**Example Code**
 ```
 //This function will turn a Blink red if connected to 
 //another for more than 1 second.
@@ -585,38 +578,38 @@ if (isloated.isExpired())
 # **Time**
 
 ## **timer.set()**
-**Description**
+**Description**\
 Set the duration of your timer
 
-**Syntax**
+**Syntax**\
 void.set(duration);
 
-**Parameters**
+**Parameters**\
 Duration: amount of milliseconds your timer will run for
 
-**Returns**
+**Returns**\
 None.
 
-**Example**
+**Example Code**
 ```
 Timer myTimer; //declaring a timer called myTimer
 myTimer.set(3000)
 ```
 
 ## **Timer.isExpired()**
-**Description**
+**Description**\
 A bool that declares whether or not your timer has run out
 
-**Syntax**
+**Syntax**\
 timer.isExpired();
 
-**Parameters**
+**Parameters**\
 Timer: name of already declared timer
 
-**Returns**
+**Returns**\
 True if a timer has existed longer than its set duration.
 
-**Example**
+**Example Code**
 ```
 Timer.myTimer
 if(myTimer.isExpired())
@@ -628,20 +621,20 @@ if(myTimer.isExpired())
 ```
 
 ## **Timer.getRemaining()**
-**Description**
+**Description**\
 Tells you how many milliseconds you have remaining on a timer
 
-**Syntax**
+**Syntax**\
 Timer.getRemaining();
 
-**Parameters**
+**Parameters**\
 Timer: A timer you have already declared
 
-**Returns**
+**Returns**\
 The time remaining in milliseconds as a long.
 If the timer has expired it will return 0
 
-**Example**
+**Example Code**
 ```
 //for example, you can map the remaining time 
 //on a timer to change the saturation of your blink
@@ -658,13 +651,13 @@ if(!myTimer.isExpired()){
 # **Types**
 
 ## **Color**
-**Description**
+**Description**\
 Holds information to allow you to set a certain color using RGB, HSB, or System Rainbow and to display brightness / dimness of a color.
 
-**Syntax**
+**Syntax**\
 var(val);
 
-**Parameters**
+**Parameters**\
 var: makeColorRGB, makeColorHSB, dim
 val:
  - RGB values (0-255)
@@ -673,7 +666,7 @@ val:
    
  - COLOR, value (0-255)
 
-**Returns**
+**Returns**\
 Returns a color on the Blink.
 
 **Example Code**
@@ -689,17 +682,17 @@ Color dim(color, value);
 // returns the color passed in a dimmer state
 //(0-255 bucketed into 32 levels of brightness)
 ```
-**Notes & Warnings**
+**Notes & Warnings**\
 Check [Colors()](https://docs.google.com/document/d/18tZSNT9PbkFpMRHs1ZLBGBZQ7pKVXfYQyx4ZgM8f9O0/edit#heading=h.gxn26xf5arw9) Reference for more information about how to set colors on Blinks.
 
 ## **Timer**
-**Description**
+**Description**\
 Helps declare a timer in your code. Timers allow you to set a certain amount of time for a function to be active.
 
-**Syntax**
+**Syntax**\
 Timer timerName;
 
-**Parameters**
+**Parameters**\
 timerName: any name you can give your timer.
 
 **Example Code**
@@ -720,7 +713,7 @@ void loop() {
 	}
 }
 ```
-**Examples of Usage**
+**Examples of Usage**\
 Check the [Basic Time Function Tutorial](https://forum.move38.com/t/basic-time-functions/303) and Time Reference Library for more information about how to incorporate Timers in your code!
 
 ----------
@@ -729,19 +722,19 @@ Check the [Basic Time Function Tutorial](https://forum.move38.com/t/basic-time-f
 
 ## **FOREACH_FACE(f)**
 
-**Description**
+**Description**\
 A for loop that runs through all six faces in ascending order (0, 1, 2, 3, 4, 5)
 
-**Syntax**
+**Syntax**\
 FOREACH_FACE(f) { }
 
-**Parameters**
+**Parameters**\
 F: the variable name for the faces, usually kept as f
 
-**Returns**
+**Returns**\
 None
 
-**Example**
+**Example Code**\
 ```
 FOREACH_FACE(f){
 	if (getLastValueReceivedOnFace(f) == WINNER){
@@ -750,23 +743,23 @@ FOREACH_FACE(f){
 
 }
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 Because it’s a loop running through all six faces in ascending order, it’s best to not call functions in the loop, rather set booleans and bytes in the loop that can then be referenced outside of it.
 
 ## **COUNT_OF(array)**
-**Description**
+**Description**\
 COUNT_OF() returns the number of items in a given array as a byte.
 
-**Syntax**
+**Syntax**\
 COUNT_OF(array);
 
-**Parameters**
+**Parameters**\
 array: Any fixed size array.
 
-**Returns**
+**Returns**\
 A byte which is the size of the array.
 
-**Example**
+**Example Code**
 ```
 //Adds up the values in array valueArray and 
 //sets the total to be sent on all faces.
@@ -781,13 +774,13 @@ setValueSentOnAllFaces(returnInt);
 ```
 
 ## **FACE_COUNT**
-**Description**
+**Description**\
 FACE_COUNT is defined on every Blinks system as the number of faces.
 
-**Returns**
+**Returns**\
 A byte representing the number of faces on the Blink. (6)
 
-**Example**
+**Example Code**
 ```
 //This code will take a face (someFace) and 
 //set that face to Red, and the opposite face to Blue.
@@ -805,36 +798,36 @@ if (!isValueOnFaceExpired(someFace))
 # Uniqueness
 
 ## **uint16_t random (uint16t_limit)**
-**Description**
+**Description**\
 A randomize function that returns an unsigned integer value that is up to 16 bits (1-65535).
 
-**Syntax**
+**Syntax**\
 random(uint16t_limit);
 
-**Parameters**
+**Parameters**\
 uint16t_limit: Upper limit (exclusive) of the range to use for randomization.
 
-**Returns**
+**Returns**\
 An unsigned int from 0 - uint16t_limit.
 
-**Example**
+**Example Code**
 ```
 //This function finds a value between 0 and 5096.
 short myShort = 5096;
 short newShort = random(myShort);
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 Without calling randomize(), this function will return the same set of values each time it is used.
 
 ## **random()**
-**Description**
+**Description**\
 The random function generates a random number based on the values it is given.
 
-**Syntax**
+**Syntax**\
 random(max);
 random(min, max);
 
-**Parameters**
+**Parameters**\
 min: lower amount of the random value(optional).
 max: upper amount of the random value.
 
@@ -850,20 +843,20 @@ void loop() {
 	}
 }
 ```
-**Notes & Warnings**
+**Notes & Warnings**\
 Not truly random each time you install the game.
 
-**Examples of Usage**
+**Examples of Usage**\
 Check out [Widgets](https://youtu.be/rowD9Byubxk) to see how randomization works for Blinks.
 
 ## **randomize()**
-**Description**
+**Description**\
 Set up the random number generator.
 
-**Syntax**
+**Syntax**\
 randomize();
 
-**Parameters**
+**Parameters**\
 None.
 
 **Example Code**
@@ -882,26 +875,26 @@ void loop() {
 	}
 }
 ```
-**Notes & Warnings**
+**Notes & Warnings**\
 If you don't call this at the beginning of your program, your random calls will be the same each time you reinstall the game
 
-**Examples of Usage**
+**Examples of Usage**\
 Check out [Widgets](https://youtu.be/rowD9Byubxk) to see how randomization works for Blinks.
 
 ## **getSerialNumberByte(byte n)**
-**Description**
+**Description**\
 Gets and returns one of the digits of the serial number for a specific Blink tile.
 
-**Syntax**
+**Syntax**\
 getSerialNumberByte(byte n);
 
-**Parameters**
+**Parameters**\
 n: A value from 0-8 which corresponds to the Blink’s serial number place.
 
-**Returns**
+**Returns**\
 A byte of the serial number at digit n.
 
-**Example**
+**Example Code**
 ```
 //This function checks the first serial number
 //and compares its byte value to 128.
@@ -909,5 +902,5 @@ byte myIdentity = getSerialNumberByte(0);
 if (myIdentity <= 128) setColor(GREEN);
 else setColor(RED);
 ```
-**Notes/Warnings**
+**Notes/Warnings**\
 This function is reliant on the specific Blink it is being run on, meaning values will be different from Blink to Blink, but constant if repeatedly called on a single Blink.
